@@ -1,0 +1,56 @@
+[project]
+name = "mumbai-local-analyzer"
+version = "0.1.0"
+description = "Python project analysing Mumbai suburban railway connectivity"
+authors = ["Arnav Puthanveettil"]
+requires-python = ">=3.10"
+dependencies = [
+    "requests",
+    "beautifulsoup4",
+    "selenium",
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "plotly",
+]
+
+[project.optional-dependencies]
+device = [
+    # Drivers or OS-specific packages can be added here if required later.
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.coverage.run]
+branch = true
+source = ["src/mumbai_local"]
+
+[tool.coverage.report]
+omit = [
+    "tests/*"
+]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+strict_optional = true
+
+[tool.bandit]
+exclude = [
+    "tests",
+    "data",
+]
