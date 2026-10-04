@@ -1,0 +1,34 @@
+{
+  "project": {
+    "name": "Mumbai Local Train Route and Station Connectivity Analyzer",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "data_root": "data",
+    "raw_data": "data/raw",
+    "cleaned_data": "data/cleaned",
+    "processed_data": "data/processed",
+    "demo_data": "data/demo",
+    "database": "database/mumbai_local.db",
+    "logs": "logs/app.log"
+  },
+  "scraping": {
+    "enabled": false,
+    "base_url": "https://www.m-indicator.com/",
+    "request_timeout": 10,
+    "retry_count": 2,
+    "retry_backoff_seconds": 2,
+    "user_agent": "MumbaiLocalAnalyzer/0.1 (contact: project-maintainer@example.com)",
+    "respect_robots_txt": true
+  },
+  "selenium": {
+    "enabled": false,
+    "driver": "chrome",
+    "headless": true,
+    "wait_timeout": 15
+  },
+  "cache": {
+    "enabled": true,
+    "expiry_hours": 12
+  }
+}
